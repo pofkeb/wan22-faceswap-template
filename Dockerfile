@@ -51,10 +51,6 @@ RUN pip install --no-cache-dir sageattention || \
 COPY custom_node/ /ComfyUI/custom_nodes/ComfyUI-IcyTikTokDownloader/
 RUN pip install --no-cache-dir requests opencv-python numpy yt-dlp
 
-# Workflow
-RUN mkdir -p /ComfyUI/user/default/workflows
-COPY workflow/ /ComfyUI/user/default/workflows/
-
 # Models (~23 GB total)
 RUN mkdir -p \
     /ComfyUI/models/diffusion_models \
