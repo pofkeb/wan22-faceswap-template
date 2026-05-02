@@ -3,7 +3,7 @@
 # Image: aiempire/wan22videolora
 # =============================================================================
 
-FROM pytorch/pytorch:2.4.0-cuda12.4-cudnn9-devel
+FROM pytorch/pytorch:2.7.0-cuda12.8-cudnn9-devel
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
