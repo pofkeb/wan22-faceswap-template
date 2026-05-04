@@ -51,6 +51,9 @@ RUN pip install --no-cache-dir sageattention || \
 COPY custom_node/ /ComfyUI/custom_nodes/ComfyUI-IcyTikTokDownloader/
 RUN pip install --no-cache-dir requests opencv-python numpy yt-dlp
 
+# JupyterLab — for uploading LoRAs and managing files via browser
+RUN pip install --no-cache-dir jupyterlab
+
 # Models (~23 GB total)
 RUN mkdir -p \
     /ComfyUI/models/diffusion_models \
@@ -78,6 +81,6 @@ RUN wget --progress=dot:giga -O /ComfyUI/models/loras/low_noise_model.safetensor
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-EXPOSE 8188
+EXPOSE 8188 8888
 WORKDIR /ComfyUI
 CMD ["/start.sh"]
